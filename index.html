@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="ad.size" content="width=300,height=250">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Countdown Banner by purplePatch</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;background-size: 100% 100%;background-repeat: no-repeat;user-select: none;}
+        .wrapper{width: 300px;height: 250px;background-image: url("assets/bg.jpg");background-size: 300px 250px;position: relative;cursor: grab;overflow: hidden;}
+        .absolute{position: absolute;}
+        .patch_box{height: 250px;width: 300px;top: 0;left: 0;transition: all 1s ease-in-out;}
+        .patch_countdown_iftar{height: 40px;width: 200px;top: 88px;left: 75px;font-size: 10px;line-height: 37px;color: white;font-weight: lighter;text-align: center;font-family: 'solaimanlipi';z-index: 2;right: 0px;margin: 0 auto;}
+        .patch_countdown_iftar .hour{left: 0px;;right:0;top:0;bottom:0;width:60px;height:37px;}
+        .patch_countdown_iftar .minute{left:24px;right:0;top:0;bottom:0;width:72px;height:37px;}
+        .patch_countdown_iftar .second{left:60px;right:0;top:0;bottom:0;width:60px;height:37px;}
+        .patch_countdown_sehri{    height: 40px;width: 200px;top: 137px;left: 75px;font-size: 10px;line-height: 37px;color: white;font-weight: lighter;text-align: center;font-family: 'solaimanlipi';z-index: 2;right: 0px;margin: 0 auto;}
+        .patch_countdown_sehri .hour_sehri{left: 0px;;right:0;top:0;bottom:0;width:60px;height:37px;}
+        .patch_countdown_sehri .minute_sehri{left:24px;right:0;top:0;bottom:0;width:72px;height:37px;}
+        .patch_countdown_sehri .second_sehri{left:60px;right:0;top:0;bottom:0;width:60px;height:37px;}
+        .patch_title{height: 53px;width: 102px;background-image: url(assets/tittle.png);background-repeat: no-repeat;top: 82px;left: 0px;z-index: 2;right: 0px;margin: 0 auto;}
+        .wrapper .box{right: 7px;width: 67px;height: 25px;bottom: 2px;}
+        .wrapper .text{left: 0px;right: 0px;margin: 0 auto;top: 10px;width: 89px;height: 37px;}
+        .wrapper .timerbg{    left: 0px;right: 0px;margin: 0 auto;top: 25px;width: 127px;height: 197px;}
+        .wrapper .left{ left: 14px;height: 85px;width: 168px;z-index: 1;}
+        .wrapper .right{left: 200px;height: 86px;width: 168px;z-index: 1;}
+        .wrapper .product{right: 0px;bottom: -2px;height: 163px;width: 137px;}
+        .patch_note{height: 250px;width: 300px;left: 0;right: 0px;margin: 0 auto;}
+        .glow{height: 250px;width: 300px;left: 0;right: 0px;margin: 0 auto;z-index: 1;}
+        @keyframes pulse {
+            0% {transform: scaleX(1)}
+            50% {transform: scale3d(.95, .95, .95)}
+            to {transform: scaleX(1)}
+        }
+        .pulse {animation-name: pulse;animation-duration: 2s;animation-iteration-count: infinite;}
+    </style>
+</head>
+<body>
+    <a href="{CLICK_MACRO}" target="_blank">
+        <div class="wrapper">
+            <div class="patch_box absolute">
+                <div class="patch_countdown_iftar absolute">  </div>
+                <div class="patch_countdown_sehri absolute">  </div>
+                <div class="patch_title absolute"></div>
+                <div class="left absolute"><img src="assets/left.png" alt=""></div>
+                <div class="right absolute"><img src="assets/right.png" alt=""></div>
+                <div class="text absolute"><img src="assets/text.png" alt=""></div>
+                <div class="timerbg absolute"><img src="assets/timerbg.png" alt=""></div>
+                <div class="patch_note absolute"><img src="assets/counterframe.png" alt=""></div>
+                <div class="glow absolute"><img src="assets/glow.png" alt=""></div>
+            </div>
+        </div>
+    </a>
+<script type="text/javascript" src="animation.js"></script>
+</body>
+</html>
