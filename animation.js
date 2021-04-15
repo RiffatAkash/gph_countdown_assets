@@ -1,19 +1,6 @@
-const images = 
-[
-    "assets/counterframe.png",
-    "assets/glow.png",
-];
-
 const displayCounterIftar = document.querySelector('.patch_countdown_iftar');
-const displayCounterSehri = document.querySelector('.patch_countdown_sehri');
-const glow = document.querySelector('.glow');
+const displaySehriTime = document.querySelector('.patch_sehri_time');
 
-
-var i = 1;
-setInterval( function() {
-    glow.style.backgroundImage = "url(" + images[i] + ")";
-    i = ( i == 1 ) ? 0 : 1;
-}, 1000);
 
 var sehriSet = [
     "3:59","3:59","3:58","3:57","3:55",
@@ -47,7 +34,7 @@ setInterval(function () {
     var timeSehri = checkSehri[0]*60*60 + checkSehri[1]*60;
 
     checkIftarTime(curDate, curTime);
-    checkSehriTime(curDate, curTime);
+    checkSehriTime(timeSehri);
 
 },1e3);
 
@@ -66,19 +53,22 @@ function checkIftarTime(todayDate, curTime) {
     }
 }
 
-function checkSehriTime(todayDate, curTime) {
-    var time = sehriSet[todayDate].split(":");
-    var setTime = time[0]*60*60 + time[1]*60;
-    var diffTime = setTime - curTime;
+function checkSehriTime(timeSehri) {
 
-    if (diffTime<setTime && diffTime>=0){
-        displayCounterSehri.innerHTML = printTimer(diffTime);
-    }
-    else {
-        var lastTime = setTime+24*60*60;
-        var sehriEnd = lastTime - curTime;
-        displayCounterSehri.innerHTML = printTimerSehri(sehriEnd);
-    }
+    displaySehriTime.innerHTML = printTimerSehri(timeSehri);
+
+    // var time = sehriSet[todayDate].split(":");
+    // var setTime = time[0]*60*60 + time[1]*60;
+    // var diffTime = setTime - curTime;
+
+    // if (diffTime<setTime && diffTime>=0){
+    //     displaySehriTime.innerHTML = printTimer(diffTime);
+    // }
+    // else {
+    //     var lastTime = setTime+24*60*60;
+    //     var sehriEnd = lastTime - curTime;
+    //     displaySehriTime.innerHTML = printTimerSehri(sehriEnd);
+    // }
 }
 
 function printTimer(sec) {
@@ -91,6 +81,7 @@ function printTimer(sec) {
     var z = ss < 10? "0"+ss : ss;
     return `<span class="hour absolute">${translteNum(x)}</span> <span class="minute absolute">${translteNum(y)}</span> <span class="second absolute">${translteNum(z)}</span>`;
 }
+
 function printTimerSehri(sec) {
     hr = Math.floor(sec / 3600) % 24;
     mm = Math.floor(sec / 60) % 60;
